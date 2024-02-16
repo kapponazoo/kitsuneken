@@ -27,7 +27,7 @@
         <button id="judgment_btn">おしゃしゃのしゃん♪</button>
         <div id="pc_hand">コンピュータの出した手は？「<span id="pc_hand_name">なに？</span>」</div>
         <div id="judgment">勝ち</div>
-        <button id="reset_btn">リセット</button>
+        <button id="reset_btn">もう一度</button>
         
     </main>
 
@@ -116,6 +116,8 @@ $("#pc_hand_name").html(pc_hand_name); //htmlとして処理
 $("#judgment").html(judgment); //htmlとして処理
 $("#pc_hand").show(); 
 $("#judgment").show(); 
+$("#judgment_btn").hide(); 
+
 })
 
 
