@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css">
+    <title>狐拳</title>
+</head>
+
+<body>
+    <div id="wrap">
+    <header>
+        <h1><img src="../omikuji/img/title.png" alt="狐拳" width="30%"></h1>
+    </header>
+
+    <main>
+        <div>あなたの出した手は？</div>
+        <ul>
+            <li id="syoya"><span>庄屋</span><img src="../omikuji/img/syoya.png" alt="庄屋"></li>
+            <li id="kitsune"><span>狐</span><img src="../omikuji/img/kitsune.png" alt="狐"></li>
+            <li id="ryoshi"><span>猟師</span><img src="../omikuji/img/ryoshi.png" alt="猟師"></li>
+        </ul>
+        
+        <div id="my_hand_name"></div>
+        <button id="judgment_btn">おしゃしゃのしゃん♪</button>
+        <div id="pc_hand">コンピュータの出した手は？「<span id="pc_hand_name">なに？</span>」</div>
+        <div id="judgment">勝ち</div>
+        <button id="reset_btn">リセット</button>
+        
+    </main>
+
+    <footer></footer></div>
+    <script>
+
+// 自分の手
+
+let my_hand ="";
+let my_hand_img ="";
+let my_hand_name ="";
+let my_hand_id ="";
+
+
+$("#kitsune").on("click",function(){
+    // alert("狐");
+    my_hand_img ='<img src="../omikuji/img/kitsune.png">';
+    my_hand_name ='狐';
+    my_hand_id ='kitsune';
+    $("#my_hand_name").html(my_hand_name); //htmlとして処理
+    $("#my_hand_name").show(); 
+})
+$("#syoya").on("click",function(){
+    // alert("庄屋");
+    my_hand_img ='<img src="../omikuji/img/syoya.png">';
+    my_hand_name ='庄屋';
+    my_hand_id ='syoya';
+    $("#my_hand_name").html(my_hand_name); //htmlとして処理
+    $("#my_hand_name").show(); 
+})
+$("#ryoshi").on("click",function(){
+    // alert("猟師");
+
+    my_hand_img ='<img src="../omikuji/img/ryoshi.png">';
+    my_hand_name ='猟師';
+    my_hand_id ='ryoshi';
+    $("#my_hand_name").html(my_hand_name); //htmlとして処理
+    $("#my_hand_name").show(); 
+})
+
+
+
+// PCの手
+      const pc_hand = Math.ceil(Math.random()*3); 
+
+      
+let pc_hand_img ="";
+let pc_hand_name ="";
+let pc_hand_id ="";
+
+if(pc_hand==1){
+    pc_hand_img ='<img src="../omikuji/img/kitsune.png">';
+    pc_hand_name ='狐';
+    pc_hand_id ='kitsune';
+}
+if(pc_hand==2){
+    pc_hand_img ='<img src="../omikuji/img/syoya.png">';
+    pc_hand_name ='庄屋';
+    pc_hand_id ='syoya';
+}
+if(pc_hand==3){
+    pc_hand_img ='<img src="../omikuji/img/ryoshi.png">';
+    pc_hand_name ='猟師';
+    pc_hand_id ='ryoshi';
+}
+
+
+
+// 結果判定
+
+
+$("#judgment_btn").click(function(){
+    let judgment ="";
+if(my_hand_id==pc_hand_id){
+    judgment ='あいこ';
+}else if(my_hand_id=="kitsune" && pc_hand_id=="syoya" ){
+    judgment ='勝ち';
+}else if(my_hand_id=="syoya" && pc_hand_id=="ryoshi" ){
+    judgment ='勝ち';
+}else if(my_hand_id=="ryoshi" && pc_hand_id=="kitsune" ){
+    judgment ='勝ち';
+}else(judgment ='負け');
+
+
+$("#pc_hand_name").html(pc_hand_name); //htmlとして処理
+$("#judgment").html(judgment); //htmlとして処理
+$("#pc_hand").show(); 
+$("#judgment").show(); 
+})
+
+
+// reset
+
+
+$("#reset_btn").click(function(){
+$("#pc_hand").hide(); 
+$("#judgment").hide(); 
+$("#my_hand_name").hide(); 
+
+})
+    </script>
+</body>
+
+</html>

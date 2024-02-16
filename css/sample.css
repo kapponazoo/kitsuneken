@@ -1,0 +1,67 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+    background-color: #666666;
+
+}
+header{
+    background-color: #fff;
+    text-align: center;
+}
+main{
+    border-bottom:1px solid #ccc;
+}
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+ul{
+    padding: 0;
+    
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:777px;
+    margin: 2em auto;
+}
+li{
+    list-style-type:none;
+    padding: 0;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+    border: 6px solid #ffffff;
+    margin: 0;
+}
+li img{width: 100%;}
+li:hover{
+    border: 6px solid #DB4120;
+    background: #BCA325;
+    color:#fff;
+}
+
+#pc_hand , #judgment{
+    display: none;
+    margin: 1em auto;
+}
+
+#my_hand_name{
+    background-color: #DB4120;
+    color:#ffffff;
+    font-weight: bold;
+}
+#wrap{
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
