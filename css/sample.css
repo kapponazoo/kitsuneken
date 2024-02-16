@@ -29,7 +29,7 @@ ul{
     
     display:table;  /* 定義 */
     table-layout: fixed;
-    width:777px;
+    width:100%;
     margin: 2em auto;
 }
 li{
