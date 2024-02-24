@@ -47,8 +47,8 @@
                     </table>
             </li>
             <li class="w30">
-                <!-- <img src="../omikuji/img/card_bg.png" alt="画面"><br>-->
-                 <img src="../omikuji/img/game_kitsuneken_janken.png"></li>
+                <!-- <img src="./img/card_bg.png" alt="画面"><br>-->
+                 <img src="./img/game_kitsuneken_janken.png"></li>
                  
 </ul>
 <p>▽それでは井成御前の間にご案内いたします▽</p>
@@ -58,16 +58,16 @@
         
  
         <ul id="select_hand">
-            <li id="syoya"><h4>庄屋</h4><img src="../omikuji/img/syoya.png" alt="庄屋"></li>
-            <li id="kitsune"><h4>狐</h4><img src="../omikuji/img/kitsune.png" alt="狐"></li>
-            <li id="ryoshi"><h4>猟師</h4><img src="../omikuji/img/ryoshi.png" alt="猟師"></li>
+            <li id="syoya"><h4>庄屋</h4><img src="./img/syoya.png" alt="庄屋"></li>
+            <li id="kitsune"><h4>狐</h4><img src="./img/kitsune.png" alt="狐"></li>
+            <li id="ryoshi"><h4>猟師</h4><img src="./img/ryoshi.png" alt="猟師"></li>
         </ul>
 
 
         <ul id="hand_set">
-            <li id="my_card"><h4>あなた</h4><img src="../omikuji/img/card_bg.png" alt="自分のカード画面"></li>
-            <li id="hand_set_msg"><h4>　</h4><img src="../omikuji/img/hand_set_msg.png" alt="自分のカード画面"></li>
-            <li id="pc_card"><h4>衣成御前</h4><img src="../omikuji/img/card_bg.png" alt="衣成御前のカード画面"></li>
+            <li id="my_card"><h4>あなた</h4><img src="./img/card_bg.png" alt="自分のカード画面"></li>
+            <li id="hand_set_msg"><h4>　</h4><img src="./img/hand_set_msg.png" alt="自分のカード画面"></li>
+            <li id="pc_card"><h4>衣成御前</h4><img src="./img/card_bg.png" alt="衣成御前のカード画面"></li>
         </ul>
         <div id="card_ok_btn">
             <div class="btn-copy"><span id="my_hand_name"></span>でいいですか？</div>
@@ -108,7 +108,7 @@ let my_hand_id ="";
 
 $("#kitsune").on("click",function(){
     // alert("狐");
-    my_hand_img ='<img src="../omikuji/img/kitsune.png">';
+    my_hand_img ='<img src="./img/kitsune.png">';
     my_hand_name ='狐';
     my_hand_id ='kitsune';
     $("#my_hand_name").html(my_hand_name); //htmlとして処理
@@ -116,7 +116,7 @@ $("#kitsune").on("click",function(){
 })
 $("#syoya").on("click",function(){
     // alert("庄屋");
-    my_hand_img ='<img src="../omikuji/img/syoya.png">';
+    my_hand_img ='<img src="./img/syoya.png">';
     my_hand_name ='庄屋';
     my_hand_id ='syoya';
     $("#my_hand_name").html(my_hand_name); //htmlとして処理
@@ -125,7 +125,7 @@ $("#syoya").on("click",function(){
 $("#ryoshi").on("click",function(){
     // alert("猟師");
 
-    my_hand_img ='<img src="../omikuji/img/ryoshi.png">';
+    my_hand_img ='<img src="./img/ryoshi.png">';
     my_hand_name ='猟師';
     my_hand_id ='ryoshi';
     $("#my_hand_name").html(my_hand_name); //htmlとして処理
@@ -143,17 +143,17 @@ let pc_hand_name ="";
 let pc_hand_id ="";
 
 if(pc_hand==1){
-    pc_hand_img ='<img src="../omikuji/img/kitsune.png">';
+    pc_hand_img ='<img src="./img/kitsune.png">';
     pc_hand_name ='狐';
     pc_hand_id ='kitsune';
 }
 if(pc_hand==2){
-    pc_hand_img ='<img src="../omikuji/img/syoya.png">';
+    pc_hand_img ='<img src="./img/syoya.png">';
     pc_hand_name ='庄屋';
     pc_hand_id ='syoya';
 }
 if(pc_hand==3){
-    pc_hand_img ='<img src="../omikuji/img/ryoshi.png">';
+    pc_hand_img ='<img src="./img/ryoshi.png">';
     pc_hand_name ='猟師';
     pc_hand_id ='ryoshi';
 }
@@ -172,17 +172,17 @@ $("#card_ok_btn").click(function(){
     $("#judgment_btn").show(); 
     pc_hand = Math.ceil(Math.random()*3);
     if(pc_hand==1){
-    pc_hand_img ='<img src="../omikuji/img/kitsune.png">';
+    pc_hand_img ='<img src="./img/kitsune.png">';
     pc_hand_name ='狐';
     pc_hand_id ='kitsune';
 }
 if(pc_hand==2){
-    pc_hand_img ='<img src="../omikuji/img/syoya.png">';
+    pc_hand_img ='<img src="./img/syoya.png">';
     pc_hand_name ='庄屋';
     pc_hand_id ='syoya';
 }
 if(pc_hand==3){
-    pc_hand_img ='<img src="../omikuji/img/ryoshi.png">';
+    pc_hand_img ='<img src="./img/ryoshi.png">';
     pc_hand_name ='猟師';
     pc_hand_id ='ryoshi';
 } 
@@ -198,20 +198,20 @@ $("#judgment_btn").click(function(){
 
 if(my_hand_id==pc_hand_id){
     judgment ='あいこ';
-    judgment_img ='<img src="../omikuji/img/draw.png">';
+    judgment_img ='<img src="./img/draw.png">';
 }else if(my_hand_id=="kitsune" && pc_hand_id=="syoya" ){
     judgment ='勝ち';
-    judgment_img ='<img src="../omikuji/img/win.png">';
+    judgment_img ='<img src="./img/win.png">';
 
 }else if(my_hand_id=="syoya" && pc_hand_id=="ryoshi" ){
     judgment ='勝ち';
-    judgment_img ='<img src="../omikuji/img/win.png">';
+    judgment_img ='<img src="./img/win.png">';
 }else if(my_hand_id=="ryoshi" && pc_hand_id=="kitsune" ){
     judgment ='勝ち';
-    judgment_img ='<img src="../omikuji/img/win.png">';
+    judgment_img ='<img src="./img/win.png">';
 }else{
     judgment ='負け',
-    judgment_img ='<img src="../omikuji/img/lose.png">';
+    judgment_img ='<img src="./img/lose.png">';
 }
 
 
@@ -239,9 +239,9 @@ $("#judgment_btn").show();
 $("#reset_btn").hide(); 
 $("#judgment_btn").hide(); 
 
-judgment_img ='<img src="../omikuji/img/hand_set_msg.png">';
-pc_hand_img ='<img src="../omikuji/img/card_bg.png">';
-my_hand_img ='<img src="../omikuji/img/card_bg.png">';
+judgment_img ='<img src="./img/hand_set_msg.png">';
+pc_hand_img ='<img src="./img/card_bg.png">';
+my_hand_img ='<img src="./img/card_bg.png">';
 
 $("#my_card").html("<h4>あなた</h4>"+my_hand_img); //htmlとして処理
 $("#hand_set_msg").html("<h4>　</h4>"+judgment_img); //htmlとして処理
