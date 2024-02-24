@@ -7,8 +7,9 @@ body{
 
 }
 header{
-    background-color: #fff;
     text-align: center;
+    background:#b0aa78;
+    color:#ffffff;
 }
 main{
     border-bottom:1px solid #ccc;
@@ -89,6 +90,19 @@ font-size: 0.8em;
 
 .mt0{margin-top: 0;
 
+}
+.welcome{
+  height: 80%;
+}
+.okami{
+height: 60%;
+}
+
+
+
+li h4{
+  font-size: 1.5em;
+  line-height: 1.5em;
 }
 /*ボタン*/
 
@@ -177,9 +191,9 @@ section.fixed:nth-of-type(2n){
     
 
 section.fixed:last-of-type{
-  padding:15% 30px 15% 30px;/*最後のセクションだけ止まらないため、エリア内の情報が少ない時は、HEADER分の高さをpadding-topに追加して上部が見えるようにする*/
+  padding:5% 30px 20% 30px;/*最後のセクションだけ止まらないため、エリア内の情報が少ない時は、HEADER分の高さをpadding-topに追加して上部が見えるようにする*/
   min-height: 100%;
-  max-height: auto;
+  max-height: 100%;
   background:url("../img/main_bg.jpg") no-repeat center;
   background-size:cover;
 }
@@ -220,14 +234,12 @@ small{
 }
 */
 #header{
-  position: fixed;/*Header固定*/
+  position: relative;
   top:0;
   height: 70px;/*高さ指定*/
   z-index: 2;
   width:100%;
   /*装飾のためのCSS*/
-  background:#333;
-  color:#fff;
   text-align: center;
   display: flex;
   justify-content: center;

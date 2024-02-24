@@ -10,35 +10,36 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
     <h1>稲荷御殿へようこそ</h1>
 </header>
     <div id="wrap">
         <main id="container">  
         <section class="fixed">
-        <div class="flex">
-            <img src="">
+        <div class="welcome">
+            
         <p>ようこそお越しくださいました。</p>
         <p>お座敷遊びをごゆるりとお楽しみください。
         </p>
-        <img src="./img/okami.png">
+        <img src="./img/okami.png" class="okami">
         <p>▽遊び方は画面をスクロールしてください▽</p>
+        </div>
         </section>
         <section class="fixed">
-            <h2>きつね拳について</h2>
+            
+   <h2>きつね拳について</h2>
+   
             <p>きつね拳はじゃんけんに似たルールです。</p>
             <p>正座して対座し、きつね・庄屋・猟師の三つの手を選びます。<br>「おししゃのしゃん」という掛け声で上半身でそれぞれのポーズを作ります。</p>
-<ul class="howto"><li>
-           
-                    
-           <h4>ポーズについて</h4>
+            <ul class="howto"><li>
+<h3>ポーズについて</h3>
            <table>
             <tr><td class="w30">きつね</td><td>両手で握り拳を作り、鉄砲を構えるように前後をずらして胸の前に構える。</td></tr>
             <tr><td>猟師</td><td>両手で握り拳を作り、鉄砲を構えるように前後をずらして胸の前に構える。</td></tr>
             <tr><td>庄屋</td><td>正座した膝の上に手を添える。</td></tr>
         </table>
 
-                    <h4>判定ルールはこちらです</h4>
+                    <h3>判定ルールはこちらです</h3>
                     <table>
                         <tr><td class="w30">猟師 vs きつね</td><td>猟師は鉄砲できつねをし貯めることが出来るので猟師の勝ち</td></tr>
                         <tr><td>きつね vs 庄屋</td><td>きつねは庄屋を化かすことができるのできつねの勝ち</td></tr>
@@ -53,7 +54,7 @@
 <p>▽それでは井成御前の間にご案内いたします▽</p>
         </section>
         <section class="fixed">
-        <h2 id="call_01">あなたの手を選んでください</h2>
+        <h2 id="call_01">絵札をクリックして、あなたの手を選んでください</h2>
         
  
         <ul id="select_hand">
@@ -214,7 +215,7 @@ if(my_hand_id==pc_hand_id){
 }
 
 
-$("#call_01").html("結果は"+judgment);
+$("#call_01").html("勝負あり");
 $("#pc_card").html("<h4>衣成御前は『"+pc_hand_name+"』</h4>"+pc_hand_img); //htmlとして処理
 $("#my_card").html("<h4>あなたは『"+my_hand_name+"』</h4>"+my_hand_img); //htmlとして処理
 $("#hand_set_msg").html("<h4>　</h4>"+judgment_img); //htmlとして処理
