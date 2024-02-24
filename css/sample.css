@@ -2,8 +2,8 @@ body{
     margin:0;
     padding:0;
     text-align:left;
-    font-size: 32px;
-    background-color: #666666;
+    background-image: url(../img/bg_img.jpg);
+    background-attachment: fixed;
 
 }
 header{
@@ -18,50 +18,228 @@ footer{
     border-bottom:1px solid #ccc;
     text-align: center;
 }
-p{
-    font-size:200%;
-    text-align: center;
-    border-bottom:1px solid #fff;
-    height:200px;
-}
+
 ul{
     padding: 0;
-    
     display:table;  /* 定義 */
     table-layout: fixed;
     width:100%;
     margin: 2em auto;
 }
-li{
+ul li{
     list-style-type:none;
     padding: 0;
     background-color: #FFF;
     display:table-cell;  /* 定義 */
-    cursor: pointer;
+margin: 2em;
     border: 6px solid #ffffff;
-    margin: 0;
+
 }
-li img{width: 100%;}
-li:hover{
+ul li img{width: 80%;
+}
+
+#select_hand li{
+    cursor: pointer;
+}
+#select_hand li:hover{
     border: 6px solid #DB4120;
     background: #BCA325;
     color:#fff;
 }
 
-#pc_hand , #judgment , #reset_btn{
+#pc_hand , #card_ok_btn , #judgment , #judgment_btn , #reset_btn , #hand_set ,#result
+{
     display: none;
     margin: 1em auto;
 }
 
-#my_hand_name{
-    background-color: #DB4120;
-    color:#ffffff;
-    font-weight: bold;
-}
+
 #wrap{
     text-align: center;
     width: 60%;
     margin: 0 auto;
-    background-color: #ffffff;
+
+
 }
 
+.howto{
+    display: flex;
+   
+}
+
+.howto li {
+    text-align: left;
+    background-color: unset;
+    border: none;
+}
+
+table{
+    border: #cccccc 1px solid;
+    width: 100%;
+}
+
+table td{
+padding: 10px;
+border: solid 1px #666666;
+font-size: 0.8em;
+}
+.w30{
+    width:30% ;
+}
+
+.mt0{margin-top: 0;
+
+}
+/*ボタン*/
+
+.btn,
+span.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+span.btn--black {
+    color: #ffffff;
+    background-color: #000000;
+    border-bottom: 5px solid #BCA325;
+    color:#fff;
+  }
+  
+  span.btn--black:hover {
+    margin-top: 3px;
+    color: #ffffff;
+    background: #DB4120;
+    border-bottom: 2px solid #BCA325;
+    color:#fff;
+  }
+.btn-copy {
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: .2em;
+    text-align: center;
+  }
+  
+  .btn-copy:before {
+    margin-right: 1rem;
+
+    content: '＼';
+  }
+  
+  .btn-copy:after {
+    margin-left: 1rem;
+  
+    content: '／';
+  }
+
+
+
+/*========= 紙芝居風レイアウトのためのCSS ===============*/
+
+section.fixed{
+    position: -webkit-sticky;/*Safari*/
+    position: sticky;
+  top:0;/*Header高さ分で止まるようにする*/
+  /*装飾のためのCSS*/
+  background:#fff;  
+  
+  padding: 2em 30px 2em 30px; min-height: 100vh;
+}
+section.fixed:first-of-type{
+background:rgba(255,0,0,0.4);
+color: #FFF;
+  }
+section.fixed:nth-of-type(2n){
+    /*装飾のためのCSS*/
+      padding:2em 30px;
+      min-height: 100%;
+      background:rgba(36,35,67,0.9);
+      color: #fff;
+    }
+    
+
+section.fixed:last-of-type{
+  padding:15% 30px 15% 30px;/*最後のセクションだけ止まらないため、エリア内の情報が少ない時は、HEADER分の高さをpadding-topに追加して上部が見えるようにする*/
+  min-height: 100%;
+  max-height: auto;
+  background:url("../img/main_bg.jpg") no-repeat center;
+  background-size:cover;
+}
+
+
+/*＝＝＝＝＝＝＝＝＝＝＝タブレット以下の見え方＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+@media screen and (max-width:768px){
+  section.fixed,
+  section.fixed:last-of-type{
+    position:relative!important;/*sticky解除*/
+  top:0;/*70px⇒0pxに戻す*/
+  min-height: 100%;
+  padding:30px;
+}
+
+}
+/*========= レイアウトのためのCSS ===============
+
+h1{
+  font-size:1.2rem;
+}
+
+#container h2{
+  font-size:1.2rem;
+}
+
+#container p{
+  margin-top:20px;  
+}
+
+small{
+  background:#333;
+  color:#fff;
+  display: block;
+  text-align: center;
+  padding:20px;
+}
+*/
+#header{
+  position: fixed;/*Header固定*/
+  top:0;
+  height: 70px;/*高さ指定*/
+  z-index: 2;
+  width:100%;
+  /*装飾のためのCSS*/
+  background:#333;
+  color:#fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container{
+  position: relative;
+  z-index: 1;/*header とfooterを手前にするため数字を小さく*/
+}
+
+#footer{
+  position: relative;
+  z-index: 2;
+}
